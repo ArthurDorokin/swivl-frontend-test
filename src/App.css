@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+.main-person {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-person .person-item {
+    width: 220px;
+    margin: 10px 0 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-person .person-item .preview {
+    width: 100px;
+    height: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-person .person-item .preview img {
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.main-person .person-item a {
+    text-decoration: none;
+    color: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.details .details-item {
+    display: flex;
+}
+
+.details .details-item .person-details {
+    width: 300px;
+    height: 300px;
+}
+
+.details .details-item .person-details img {
+    width: 100%;
+}
+
+.details .details-item .person-details-info > div {
+    display: flex;
+    align-items: center;
+}
+
+.details .details-item .person-details-info span {
+    color: #717171;
+}
+
+.details .details-item .person-details-info p {
+    margin: 3px 0 3px 15px;
+}
+
+.details .details-item .person-details {
+    margin: 0 30px 0 0;
 }

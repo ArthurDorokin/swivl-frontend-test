@@ -3,13 +3,13 @@ import {Switch, Route} from "react-router-dom";
 import Details from "./components/pages/details/Details";
 import Content from "./components/pages/content/Content";
 import './App.css';
-class App extends Component {
 
+class App extends Component {
   render() {
-    return (
+      return (
         <Switch>
             <Route exact path="/" component={Content}/>
-            <Route path=":user" component={Details}/>
+            <Route path="/users/:login" component={Details}/>
         </Switch>
     );
   }

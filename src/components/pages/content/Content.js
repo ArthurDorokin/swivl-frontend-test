@@ -1,27 +1,31 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {fetchPersons} from "../../redux/action/person";
+import {NavLink} from "react-router-dom";
+import {fetchUsers} from "../../redux/action/users";
+import {selectedUserId} from "../../redux/action/selectedUserId";
 
 class Content extends Component {
+
     componentDidMount() {
-        this.props.fetchPersons()
+        this.props.fetchUsers()
     }
 
     render() {
-        const {person} = this.props.person
-        console.log("person",person);
+        const {users} = this.props
         return (
             <div className="content">
                 <div className="main-person">
-                    {person.map((item) =>
+                    {users.users.length && users.users.map((item) =>
                         <div className="person-item" key={item.id}>
-                            <div className="login">{item.login}</div>
-                            <div className="link-profile">
-                                <a href={item.html_url} target="_blank">{item.html_url}</a>
-                            </div>
-                            <div className="preview">
-                                <img src={item.avatar_url} alt={item.login}/>
-                            </div>
+                            <NavLink to={`/users/:${item.login}`} onClick={() => this.props.selectedUserId(item.id)}>
+                                <div className="preview">
+                                    <img src={item.avatar_url} alt={item.login}/>
+                                </div>
+                                <div className="login">{item.login}</div>
+                                <div className="link-profile">
+                                    {item.html_url}
+                                </div>
+                            </NavLink>
                         </div>
                     )}
                 </div>
@@ -30,7 +34,10 @@ class Content extends Component {
     }
 }
 
+const mapStateToProps = ({users}) => ({users: users})
 
-const mapStateToProps = ({person}) => ({person: person})
+const mapDispatchToProps = dispatch => ({
+    selectedUserId: (id) => dispatch(selectedUserId(id))
+})
 
-export default connect(mapStateToProps, {fetchPersons})(Content);
+export default connect(mapStateToProps, {selectedUserId, fetchUsers})(Content);

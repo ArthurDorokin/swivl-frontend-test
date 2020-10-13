@@ -1,23 +1,22 @@
 const initialState = {
-    person: []
+    users: []
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case "FETCH_PERSONS_REQUEST":
+        case "FETCH_USERS_REQUEST":
             return {
                 ...state,
                 loading: true
             }
-        case "FETCH_PERSONS_SUCCESS":
-            console.log("FETCH_PERSONS_SUCCESS", action);
+        case "FETCH_USERS_SUCCESS":
             return {
                 ...state,
                 loading: true,
-                person: action.payload,
+                users: action.payload,
                 error: ''
             };
-        case "FETCH_PERSONS_FAILURE":
+        case "FETCH_USERS_FAILURE":
             return {
                 ...state,
                 loading: true,
