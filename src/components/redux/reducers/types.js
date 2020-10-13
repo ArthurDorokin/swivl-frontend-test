@@ -1,0 +1,1 @@
+export const FETCH_SUCCESS = 'POST/FETCH_SUCCESS'
