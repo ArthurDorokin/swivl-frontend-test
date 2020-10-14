@@ -1,20 +1,20 @@
 const initialState = {
-    users: []
+    selectedUserLogin: []
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case "FETCH_USERS_REQUEST":
+        case "TAKE_USERS_REQUEST":
             return {
                 ...state
             }
-        case "FETCH_USERS_SUCCESS":
+        case "TAKE_USER_SUCCESS":
             return {
                 ...state,
-                users: action.payload,
+                selectedUserLogin: action.payload,
                 error: ''
             };
-        case "FETCH_USERS_FAILURE":
+        case "TAKE_USERS_FAILURE":
             return {
                 ...state,
                 error: action.payload

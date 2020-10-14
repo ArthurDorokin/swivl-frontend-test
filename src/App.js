@@ -5,14 +5,14 @@ import Content from "./components/pages/content/Content";
 import './App.css';
 
 class App extends Component {
-  render() {
-      return (
-        <Switch>
-            <Route exact path="/" component={Content}/>
-            <Route path="/users/:login" component={Details}/>
-        </Switch>
-    );
-  }
+    render() {
+        return (
+            <Switch>
+                <Route exact path="/" component={Content}/>
+                <Route path="/users/:login" component={Details}/>
+            </Switch>
+        );
+    }
 }
 
 export default App;

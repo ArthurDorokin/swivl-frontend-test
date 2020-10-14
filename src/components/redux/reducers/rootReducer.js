@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
 import users from "./users";
-import selectedUserId from "./selectedUserId";
+import selectedUserLogin from "./selectedUserLogin";
 
 export default combineReducers({
     users,
-    selectedUserId
+    selectedUserLogin
 })

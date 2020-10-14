@@ -10,8 +10,7 @@ import thunk from "redux-thunk";
 const composeEnhancers =
     typeof window === 'object' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-        }) : compose;
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
 const store = createStore(
     rootReducer,
@@ -23,7 +22,7 @@ const store = createStore(
 const app = (
     <Provider store={store}>
         <BrowserRouter>
-            <App />
+            <App/>
         </BrowserRouter>
     </Provider>
 );
